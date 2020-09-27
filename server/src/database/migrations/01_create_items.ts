@@ -1,9 +1,16 @@
 import Knex from 'knex'
 
-export async function up(knex: Knex) {
-    
+export async function up(knex:Knex) {
+    return knex.schema.createTable('items', table => {
+        table.increments('id').primary()
+        table.string('name').notNullable()
+        table.string('decription', 255).notNullable()
+        table.string('brand').notNullable()
+        table.string('picture').notNullable()
+        table.float('price').notNullable()
+    })
 }
 
-export async function down(knex: Knex) {
-    
+export async function down(knex:Knex) {
+    return knex.schema.dropTable('items')
 }

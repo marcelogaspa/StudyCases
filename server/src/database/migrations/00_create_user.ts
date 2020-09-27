@@ -12,12 +12,9 @@ export async function up(knex:Knex) {
         table.string('image')
         table.string('city')
         table.string('uf', 2)
+        table.decimal('latitude').notNullable()
         table.decimal('longitude').notNullable()
-        table.decimal('latitude').notNullable
-
     })
-    
-    
 }
 
 export async function down(knex:Knex) {
