@@ -1,0 +1,1 @@
+SELECT * FROM Person.Person WHERE BusinessEntityID IN (3,8,14)
